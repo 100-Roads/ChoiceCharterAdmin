@@ -41,7 +41,18 @@ WA.onInit().then(() => {
       WA.room.showLayer("facade");
       WA.room.showLayer("facade-furniture-bg");
     });
+    
+  //Popup Agriculture
+  WA.room.onEnterLayer('message-1').subscribe(() => {
+    currentPopup = WA.ui.openPopup("Addon1Pop","Agriculture",[]);
+  })
+  WA.room.onLeaveLayer('message-1').subscribe(closePopup)
 
+  //Popup Agriculture X
+  WA.room.onEnterLayer('message-1x').subscribe(() => {
+    currentPopup = WA.ui.openPopup("Addon1xPop","Agriculture",[]);
+  })
+  WA.room.onLeaveLayer('message-1x').subscribe(closePopup)
     
     WA.room.onLeaveLayer('clockZone').subscribe(closePopup)
 
